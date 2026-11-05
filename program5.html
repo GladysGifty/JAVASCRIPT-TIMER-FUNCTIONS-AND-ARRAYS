@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <style>
+        body {
+            background-color: #e6e6fa;
+            text-align: center;
+            font-family: Arial;
+            padding: 30px;
+        }
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 450px;
+            margin: auto;
+        }
+        h1 {
+            color: #663399;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Details</h1>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        var student = [
+            { name: "John", regno: "UR13CS129", year: 1995 },
+            { name: "Joseph", regno: "UR13CS456", year: 1998 },
+            { name: "David", regno: "UR13CS789", year: 2002 },
+            { name: "Mary", regno: "UR13CS321", year: 2004 }
+        ];
+
+        var output = "";
+
+        for (var i = 0; i < student.length; i++) {
+            output += "<p>" + student[i].name +
+                "'s Register Number is " + student[i].regno + "<br>";
+
+            if (student[i].year < 2000) {
+                output += "Born before 2000";
+            }
+            else if (student[i].year > 2000) {
+                output += "Born after 2000";
+            }
+            else {
+                output += "Born in 2000";
+            }
+
+            output += "</p>";
+        }
+
+        document.getElementById("result").innerHTML = output;
+    </script>
+
+</body>
+</html>

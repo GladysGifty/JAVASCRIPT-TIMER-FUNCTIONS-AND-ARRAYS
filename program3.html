@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Font Size</title>
+    <style>
+        body {
+            background-color: #e6e6fa;
+            text-align: center;
+            font-family: Arial;
+            padding: 50px;
+        }
+        h1 {
+            color: #663399;
+        }
+        p {
+            font-size: 20px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Change Font Size!</h1>
+
+    <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
+        Move cursor over me to zoom in...
+    </p>
+
+    <script>
+        function incSize() {
+            document.getElementById("para1").style.fontSize = "28px";
+        }
+
+        function decSize() {
+            document.getElementById("para1").style.fontSize = "20px";
+        }
+    </script>
+
+</body>
+</html>

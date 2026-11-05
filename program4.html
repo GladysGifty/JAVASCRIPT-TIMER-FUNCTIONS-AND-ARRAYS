@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Move Car</title>
+    <style>
+        body {
+            background-color: #e6e6fa;
+            text-align: center;
+            font-family: Arial;
+            padding: 30px;
+        }
+        h1 {
+            color: #663399;
+        }
+        button {
+            background-color: #663399;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #road {
+            position: relative;
+            height: 120px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        #img {
+            position: absolute;
+            left: 0px;
+            top: 25px;
+            font-size: 55px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Move the Car!</h1>
+
+    <button onclick="moveRight()">Move</button>
+    <button onclick="stop()">Stop</button>
+
+    <div id="road">
+        <span id="img">🚗</span>
+    </div>
+
+    <script>
+        var imgObj;
+        var animate;
+
+        function init() {
+            imgObj = document.getElementById("img");
+            imgObj.style.left = "0px";
+        }
+
+        function moveRight() {
+            clearInterval(animate);
+
+            animate = setInterval(function() {
+                imgObj.style.left = parseInt(imgObj.style.left) + 2 + "px";
+
+                if (parseInt(imgObj.style.left) > 500) {
+                    clearInterval(animate);
+                }
+            }, 10);
+        }
+
+        function stop() {
+            clearInterval(animate);
+            imgObj.style.left = "0px";
+        }
+
+        window.onload = init;
+    </script>
+
+</body>
+</html>
